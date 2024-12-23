@@ -26,6 +26,7 @@ public class Interactor : MonoBehaviour
     private void Update()
     {
         HandleInteraction();
+         Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.green);
     }
 
     private void HandleInteraction()
