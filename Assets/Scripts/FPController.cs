@@ -25,10 +25,13 @@ public class FPController : MonoBehaviour
     private Camera playerCamera;
 
     public bool playerWalking = false;
+
+    private AudioSource audioSource;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
 
         // Lock the cursor to the screen
         Cursor.lockState = CursorLockMode.Locked;
@@ -43,6 +46,9 @@ public class FPController : MonoBehaviour
 
     void Update()
     {
+        playerWalking = IsWalking();
+      
+
         // Handle movement
         translation = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         strafe = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
@@ -61,10 +67,12 @@ public class FPController : MonoBehaviour
         {
             playerCamera.transform.localRotation = Quaternion.Euler(verticalLookRotation, 0, 0);
         }
-        playerWalking = IsWalking();
+        
+
+
     }
 
-    //checks if the player is walking by looking translation values
+    //checks if the player is walking by looking at translation values
     bool IsWalking()
     {
         return Mathf.Abs(translation) > 0.001f || Mathf.Abs(strafe) > 0.001f;

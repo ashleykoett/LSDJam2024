@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 7225230793752225212}
   - component: {fileID: 8274196844333207681}
   - component: {fileID: 5773018097585277256}
-  - component: {fileID: 4531487659242227493}
+  - component: {fileID: 5283243993270819201}
   - component: {fileID: 4230243157857103654}
   m_Layer: 0
   m_Name: walking_player
@@ -330,13 +330,13 @@ MonoBehaviour:
   backKey: 115
   leftKey: 97
   rightKey: 100
-  moveSpeed: 5
-  turnSpeed: 60
+  moveSpeed: 4
+  turnSpeed: 80
   lookSpeed: 60
   maxLookAngle: 90
   playerCamera: {fileID: 3225102532857824247}
   playerWalking: 0
---- !u!114 &4531487659242227493
+--- !u!114 &5283243993270819201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,10 +350,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAudio: {fileID: 4230243157857103654}
   stepEffect: {fileID: 8300000, guid: e2469d50026517c42b897c325e9679a9, type: 3}
-  walkModifier: 1
   playStep: 0
-  repeatRate: 0.6
+  repeatRate: 0.5
   playerController: {fileID: 5773018097585277256}
+  slowWalk: {x: 3, y: 0.6}
+  midWalk: {x: 4, y: 0.5}
+  fastWalk: {x: 5, y: 0.4}
 --- !u!82 &4230243157857103654
 AudioSource:
   m_ObjectHideFlags: 0
