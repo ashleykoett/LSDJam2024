@@ -24,6 +24,8 @@ public class FPController : MonoBehaviour
     [SerializeField]
     private Camera playerCamera;
 
+    public bool playerWalking = false;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -59,5 +61,13 @@ public class FPController : MonoBehaviour
         {
             playerCamera.transform.localRotation = Quaternion.Euler(verticalLookRotation, 0, 0);
         }
+        playerWalking = IsWalking();
     }
+
+    //checks if the player is walking by looking translation values
+    bool IsWalking()
+    {
+        return Mathf.Abs(translation) > 0.001f || Mathf.Abs(strafe) > 0.001f;
+    }
+    
 }

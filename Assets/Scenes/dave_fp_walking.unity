@@ -384,10 +384,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e2469d50026517c42b897c325e9679a9, type: 3}
   m_Resource: {fileID: 8300000, guid: e2469d50026517c42b897c325e9679a9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -469,6 +469,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1929520414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5773018097585277256, guid: 381e9de925e8d474dbef8471c7612a5e, type: 3}
+  m_PrefabInstance: {fileID: 5094780811535407975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929520406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb03b25d71058d44fbcca99d7277332b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1929520420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929520406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f6fceba96533d47a592aadd83b7671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudio: {fileID: 1929520413}
+  stepEffect: {fileID: 8300000, guid: e2469d50026517c42b897c325e9679a9, type: 3}
+  walkModifier: 1
+  playStep: 0
+  repeatRate: 0.6
+  playerController: {fileID: 1929520414}
 --- !u!1 &1989523436
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +679,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7894609935495117482, guid: 381e9de925e8d474dbef8471c7612a5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929520420}
     - targetCorrespondingSourceObject: {fileID: 7894609935495117482, guid: 381e9de925e8d474dbef8471c7612a5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1929520413}
