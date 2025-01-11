@@ -78,6 +78,9 @@ public class ProceduralLevelGenerator : MonoBehaviour
         GameObject newRoom = Instantiate(roomPrefab, position, rotation);
         newRoom.transform.parent = transform; // Keep hierarchy organized
 
+        // Ensure Y-position is on the same plane
+        newRoom.transform.position = new Vector3(newRoom.transform.position.x, 0, newRoom.transform.position.z);
+
         return newRoom;
     }
 
@@ -91,6 +94,22 @@ public class ProceduralLevelGenerator : MonoBehaviour
         );
     }
 
+    bool DoesRoomOverlap(GameObject newRoom)
+    {
+        Bounds newRoomBounds = newRoom.GetComponent<Collider>().bounds;
+
+        foreach (GameObject existingRoom in generatedRooms)
+        {
+            Bounds existingRoomBounds = existingRoom.GetComponent<Collider>().bounds;
+            if (newRoomBounds.Intersects(existingRoomBounds))
+            {
+                return true; // Overlap detected
+            }
+        }
+
+        return false; // No overlap
+    }
+
     void AlignRoom(GameObject newRoom, Door newDoor, GameObject existingRoom, Door existingDoor)
     {
         // Calculate the position difference between the two doors
@@ -98,6 +117,9 @@ public class ProceduralLevelGenerator : MonoBehaviour
 
         // Move the new room by the offset
         newRoom.transform.position += offset;
+
+        // Constrain Y-position to ensure rooms are on the same plane
+        newRoom.transform.position = new Vector3(newRoom.transform.position.x, 0, newRoom.transform.position.z);
 
         // Align the new room's rotation so the doors face each other
         Vector3 newDoorForward = newDoor.transform.forward;
