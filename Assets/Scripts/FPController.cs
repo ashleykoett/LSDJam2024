@@ -47,7 +47,6 @@ public class FPController : MonoBehaviour
     void Update()
     {
         playerWalking = IsWalking();
-      
 
         // Handle movement
         translation = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
@@ -77,5 +76,7 @@ public class FPController : MonoBehaviour
     {
         return Mathf.Abs(translation) > 0.001f || Mathf.Abs(strafe) > 0.001f;
     }
+
+  
     
 }
