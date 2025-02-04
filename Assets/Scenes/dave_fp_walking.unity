@@ -25581,6 +25581,37 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1860734250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860734251}
+  m_Layer: 0
+  m_Name: room_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860734251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860734250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.466749, y: 4.3289657, z: -23.655277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1890358419
 Mesh:
   m_ObjectHideFlags: 0
@@ -28113,7 +28144,7 @@ PrefabInstance:
       objectReference: {fileID: 1778690531}
     - target: {fileID: 243753451716256881, guid: b564e9ce033541c4482411691e377a82, type: 3}
       propertyPath: m_VersionIndex
-      value: 2464
+      value: 2470
       objectReference: {fileID: 0}
     - target: {fileID: 950573919399474690, guid: b564e9ce033541c4482411691e377a82, type: 3}
       propertyPath: m_Name
@@ -28182,3 +28213,4 @@ SceneRoots:
   - {fileID: 17185004}
   - {fileID: 464248987}
   - {fileID: 8172904306834660799}
+  - {fileID: 1860734251}

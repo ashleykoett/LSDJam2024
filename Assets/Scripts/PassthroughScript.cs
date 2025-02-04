@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +10,11 @@ public class PassthroughScript : MonoBehaviour
 
     public bool hasTriggered;
 
+    public bool activeAdjacent;
+
     public GameObject [] possibleRooms;
+
+    public List<RoomIdentifier> connectedRooms;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +33,12 @@ public class PassthroughScript : MonoBehaviour
     
     {
         if(!hasTriggered)
-        possibleRooms[Random.Range(0,possibleRooms.Length)].SetActive(true);
-        hasTriggered = true;
+        {
+            int newRoom = Random.Range(0,possibleRooms.Length);
+            possibleRooms[newRoom].SetActive(true);
+            RoomIdentifier thisRoom = possibleRooms [newRoom].GetComponent<RoomIdentifier>();
+            connectedRooms.Add(thisRoom);
+            hasTriggered = true;
+        }
     }
 }
